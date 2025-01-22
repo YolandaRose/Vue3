@@ -1,33 +1,25 @@
 <template>
   <div class="app">
-    <h1 ref="title">Welcome</h1>
-    <button @click="showLog">显示标题元素</button>
-    <Person/>
-    <Namecomputed/>
-    <Car/>
-    <Water ref="shui"/>
-    <button @click="showWater">显示Water可见元素</button>
+    <h1 ref="title">Welcome</h1>    
+    <!-- 导航区 -->
+     <div class="navigate">
+      <RouterLink to="/Dog" active-class="active">Dog</RouterLink>
+      <RouterLink to="/Namecomputed" active-class="active">Namecomputed</RouterLink>
+      <RouterLink to="/Person" active-class="active">Person</RouterLink>
+      <RouterLink to="/Car" active-class="active">Car</RouterLink>
+      <RouterLink to="Water" active-class="active">Water</RouterLink>
+     </div>
+
+     <!-- 组件区 -->
+    <div class="main-content">
+      <RouterView></RouterView>
+    </div>
+    
   </div>
 </template>
 
 <script lang="ts" setup name="App">
-  import Person from './components/Person.vue'
-  import Car from './components/Car.vue'
-  import Namecomputed from './components/Namecomputed.vue';
-  import Water from './components/Water.vue';
-
-  //创建一个title用于存储ref标记的内容
-  import { ref } from 'vue'
-  let title = ref()
-  function showLog() {
-    console.log(title.value)
-  }
-
-  //创建一个shui用于存储ref标记的内容，并显示water组件通过defineExpose暴露的水的属性
-  let shui = ref()
-  function showWater() {
-    console.log(shui.value)
-  }
+  import {RouterView, RouterLink} from 'vue-router'
 </script>
 
 <style scoped>
@@ -37,6 +29,27 @@
     box-shadow: 0 0 10px;
     border-radius: 10px;
     padding: 20px;
+  }
+  .navigate {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 20px;
+  }
+  .navigate a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .navigate a.active {
+    background-color: #4541b8;
+    color: #fff;
+  }
+  .main-content {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
 </style>
 

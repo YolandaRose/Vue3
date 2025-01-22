@@ -1,15 +1,39 @@
 <template>
     <div class="person">
+      <ul>
+        <li v-for="p in list" :key="p.id">
+          {{ p.name }} -- {{ p.age }}
+        </li>
+      </ul>
+
       <h2>姓名：{{ person.name }}</h2>
       <h2>年龄：{{ person.age }}</h2>
       <button @click="changeName">修改名字</button>
       <button @click="changeAge">修改年龄</button>
       <button @click="showTel">查看联系方式</button>
       <button @click="changePerson">修改整个人</button>
+
+      
     </div>
 </template>
   
-<script lang="ts" setup name="Person1">
+<script lang="ts" setup name="Person">
+  // /*导入接口
+  // import {type Persons} from '@/types'
+  // let personList:Persons = [
+  //   {id:'1',name:'Yolanda',age:18},
+  //   {id:'2',name:'Rose',age:20},
+  //   {id:'3',name:'Lily',age:22}
+  // ]*/
+
+  //接收父组件传的Props
+  defineProps(['list'])
+  //接受并保存Props
+  //let x = defineProps(['a','list'])
+  //console.log(x.a)
+  //接受并限制类型
+  //defineProps<{list:Persons}>()
+
   import { ref, watch } from 'vue' //使数据变为响应式
   //数据
   let person = ref({
