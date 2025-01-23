@@ -12,8 +12,8 @@
 
   let route = useRoute()
     console.log(route)
-  let dogList = reactive(['https://images.dog.ceo/breeds/collie-border/n02106166_135.jpg'])
-
+  let dogList = reactive<string[]>([])
+  defineProps(['id','name','pic','ex'])
   async function fetchDog() {
   // 获取查询参数，并确保它是一个字符串
   let picUrl = Array.isArray(route.query.pic) ? route.query.pic[0] : route.query.pic

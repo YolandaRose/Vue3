@@ -24,7 +24,8 @@ const router = createRouter({
             children:[
                 {
                     path:'detail',
-                    component:Detail
+                    component:Detail,
+                    props:true
                 }
             ]
         },

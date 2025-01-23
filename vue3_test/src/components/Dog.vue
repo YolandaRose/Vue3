@@ -3,7 +3,7 @@
       <!-- 导航区 -->
        <ul>
         <li v-for="dog in dogList" :key="dog.id">
-          <RouterLink :to="`/dog/detail?id=${ dog.id }&name=${ dog.name }&pic=${ dog.pic }`">{{ dog.name }}</RouterLink>
+          <RouterLink :to="`/dog/detail?id=${ dog.id }&name=${ dog.name }&pic=${ dog.pic }&ex=${ dog.ex }`">{{ dog.name }}</RouterLink>
         </li>
        </ul>
       <!-- 图片区 -->
@@ -19,10 +19,10 @@
   import {RouterView, RouterLink} from 'vue-router'
 
   let dogList = reactive([
-    {id:'1', name:'边牧', pic:'https://dog.ceo/api/breed/collie/border/images/random'},
-    {id:'2', name:'比格', pic:'https://dog.ceo/api/breed/beagle/images/random'},
-    {id:'3', name:'金毛', pic:'https://dog.ceo/api/breed/dachshund/images/random'},
-    {id:'3', name:'腊肠', pic:'https://dog.ceo/api/breed/retriever/golden/images/random'}
+    {id:'1', name:'边牧', pic:'https://dog.ceo/api/breed/collie/border/images/random',ex:'https://images.dog.ceo/breeds/collie-border/n02106166_135.jpg'},
+    {id:'2', name:'比格', pic:'https://dog.ceo/api/breed/beagle/images/random',ex: 'https://images.dog.ceo/breeds/beagle/n02088364_10947.jpg'},
+    {id:'3', name:'金毛', pic:'https://dog.ceo/api/breed/dachshund/images/random',e:'https://images.dog.ceo/breeds/retriever-golden/n02099601_3327.jpg'},
+    {id:'3', name:'腊肠', pic:'https://dog.ceo/api/breed/retriever/golden/images/random',ex:'https://images.dog.ceo/breeds/dachshund/dachshund-7.jpg'}
   ])
   
 </script>
@@ -38,7 +38,7 @@
         margin-top: 10px;
     }
     li {
-        font-size: 20px;
+        font-size: 10px;
     }
     img {
         height: 200px;
