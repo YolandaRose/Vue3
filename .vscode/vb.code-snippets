@@ -1,0 +1,22 @@
+"vue": {
+  "prefix": "vb",
+  "body": [
+    "<template>",
+    "  <div class=\"app\">",
+    "",
+    "  </div>  ",
+    "</template>",
+    "",
+    "<script setup lang=\"ts\" name=\"App\">",
+    " ",
+    "</script>",
+    "",
+    "<style scoped>",
+    "  .app {",
+    "      font-size: 16px;",
+    "  }",
+    "</style>",
+    ""
+  ],
+  "description": "vue"
+}
